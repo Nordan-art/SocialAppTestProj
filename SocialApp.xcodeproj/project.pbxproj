@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A9967CB7296C69760049F440 /* LoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9967CB6296C69750049F440 /* LoginData.swift */; };
+		A9967CBA296C69A50049F440 /* NavigationFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9967CB9296C69A50049F440 /* NavigationFuncs.swift */; };
+		A9967CBC296C70BF0049F440 /* LoginInputStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9967CBB296C70BF0049F440 /* LoginInputStyle.swift */; };
+		A9967CC0296C791C0049F440 /* HomeScreenMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9967CBF296C791C0049F440 /* HomeScreenMain.swift */; };
+		A9967CC4296C7B470049F440 /* SearchSreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9967CC3296C7B470049F440 /* SearchSreen.swift */; };
+		A9967CC6296C7B550049F440 /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9967CC5296C7B550049F440 /* ProfileScreen.swift */; };
+		A9967CC9296C7C230049F440 /* TabsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9967CC8296C7C230049F440 /* TabsScreen.swift */; };
 		A9A6153E295D8DE2009788E4 /* SocialAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A6153D295D8DE2009788E4 /* SocialAppApp.swift */; };
 		A9A61540295D8DE2009788E4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A6153F295D8DE2009788E4 /* ContentView.swift */; };
 		A9A61542295D8DE6009788E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9A61541295D8DE6009788E4 /* Assets.xcassets */; };
@@ -15,6 +22,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A9967CB6296C69750049F440 /* LoginData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginData.swift; sourceTree = "<group>"; };
+		A9967CB9296C69A50049F440 /* NavigationFuncs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationFuncs.swift; sourceTree = "<group>"; };
+		A9967CBB296C70BF0049F440 /* LoginInputStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInputStyle.swift; sourceTree = "<group>"; };
+		A9967CBF296C791C0049F440 /* HomeScreenMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenMain.swift; sourceTree = "<group>"; };
+		A9967CC3296C7B470049F440 /* SearchSreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSreen.swift; sourceTree = "<group>"; };
+		A9967CC5296C7B550049F440 /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
+		A9967CC8296C7C230049F440 /* TabsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsScreen.swift; sourceTree = "<group>"; };
 		A9A6153A295D8DE2009788E4 /* SocialApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9A6153D295D8DE2009788E4 /* SocialAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialAppApp.swift; sourceTree = "<group>"; };
 		A9A6153F295D8DE2009788E4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -34,6 +48,101 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A9967CB1296C5C300049F440 /* scr */ = {
+			isa = PBXGroup;
+			children = (
+				A9967CB4296C693A0049F440 /* GenData */,
+				A9967CB2296C5C3D0049F440 /* Screens */,
+			);
+			path = scr;
+			sourceTree = "<group>";
+		};
+		A9967CB2296C5C3D0049F440 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				A9967CC7296C7BE70049F440 /* TabsScreen */,
+				A9967CB3296C5C430049F440 /* Login */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		A9967CB3296C5C430049F440 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				A9A6154D295DA503009788E4 /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		A9967CB4296C693A0049F440 /* GenData */ = {
+			isa = PBXGroup;
+			children = (
+				A9967CB8296C69840049F440 /* Navigation */,
+				A9967CB5296C69540049F440 /* LoginData */,
+			);
+			path = GenData;
+			sourceTree = "<group>";
+		};
+		A9967CB5296C69540049F440 /* LoginData */ = {
+			isa = PBXGroup;
+			children = (
+				A9967CB6296C69750049F440 /* LoginData.swift */,
+				A9967CBB296C70BF0049F440 /* LoginInputStyle.swift */,
+			);
+			path = LoginData;
+			sourceTree = "<group>";
+		};
+		A9967CB8296C69840049F440 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				A9967CB9296C69A50049F440 /* NavigationFuncs.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		A9967CBE296C78D10049F440 /* HomeScreens */ = {
+			isa = PBXGroup;
+			children = (
+				A9967CBF296C791C0049F440 /* HomeScreenMain.swift */,
+			);
+			path = HomeScreens;
+			sourceTree = "<group>";
+		};
+		A9967CC1296C7B1C0049F440 /* Serach */ = {
+			isa = PBXGroup;
+			children = (
+				A9967CC3296C7B470049F440 /* SearchSreen.swift */,
+			);
+			path = Serach;
+			sourceTree = "<group>";
+		};
+		A9967CC2296C7B230049F440 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				A9967CC5296C7B550049F440 /* ProfileScreen.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		A9967CC7296C7BE70049F440 /* TabsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A9967CCA296C7C2C0049F440 /* Tabs */,
+				A9967CC8296C7C230049F440 /* TabsScreen.swift */,
+			);
+			path = TabsScreen;
+			sourceTree = "<group>";
+		};
+		A9967CCA296C7C2C0049F440 /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				A9967CC2296C7B230049F440 /* Profile */,
+				A9967CC1296C7B1C0049F440 /* Serach */,
+				A9967CBE296C78D10049F440 /* HomeScreens */,
+			);
+			path = Tabs;
+			sourceTree = "<group>";
+		};
 		A9A61531295D8DE1009788E4 = {
 			isa = PBXGroup;
 			children = (
@@ -53,9 +162,9 @@
 		A9A6153C295D8DE2009788E4 /* SocialApp */ = {
 			isa = PBXGroup;
 			children = (
+				A9967CB1296C5C300049F440 /* scr */,
 				A9A6153D295D8DE2009788E4 /* SocialAppApp.swift */,
 				A9A6153F295D8DE2009788E4 /* ContentView.swift */,
-				A9A6154D295DA503009788E4 /* LoginView.swift */,
 				A9A61541295D8DE6009788E4 /* Assets.xcassets */,
 				A9A61543295D8DE6009788E4 /* Preview Content */,
 			);
@@ -140,9 +249,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9967CBC296C70BF0049F440 /* LoginInputStyle.swift in Sources */,
+				A9967CBA296C69A50049F440 /* NavigationFuncs.swift in Sources */,
 				A9A6154E295DA503009788E4 /* LoginView.swift in Sources */,
+				A9967CC9296C7C230049F440 /* TabsScreen.swift in Sources */,
+				A9967CB7296C69760049F440 /* LoginData.swift in Sources */,
+				A9967CC6296C7B550049F440 /* ProfileScreen.swift in Sources */,
 				A9A61540295D8DE2009788E4 /* ContentView.swift in Sources */,
 				A9A6153E295D8DE2009788E4 /* SocialAppApp.swift in Sources */,
+				A9967CC0296C791C0049F440 /* HomeScreenMain.swift in Sources */,
+				A9967CC4296C7B470049F440 /* SearchSreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +396,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -287,6 +404,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.MCGroup.SocialApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -310,6 +430,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -317,6 +438,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.MCGroup.SocialApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
