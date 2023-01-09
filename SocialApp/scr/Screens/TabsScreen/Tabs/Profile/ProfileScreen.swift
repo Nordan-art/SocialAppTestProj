@@ -11,8 +11,14 @@ struct ProfileScreen: View {
     var body: some View {
         ZStack {
             VStack {
-                Text("ProfileScreen")
+                List {
+                    Text("ProfileScreen")
+                        .frame(height: 500)
+                        .navigationTitle("Home")
+                }
             }
+            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .center)
+            .background( .white)
         }
         .navigationBarBackButtonHidden(true)
     }

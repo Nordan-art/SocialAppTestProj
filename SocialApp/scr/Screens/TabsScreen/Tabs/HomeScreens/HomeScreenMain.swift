@@ -11,14 +11,32 @@ struct HomeScreenMain: View {
     var body: some View {
         ZStack {
             VStack {
-                Text("Home screen")
+                List {
+                    
+                    Text("Home")
+                    
+//                        .frame(height: 500)
+                    
+                    Text("Test1")
+                       
+                    Text("Test2")
+                        
+                    Text("Test3")
+                    
+                    Text("Test4")
+                    
+                    Text("Test5")
+                        
+                }
+               
             }
+            .padding(.top, 60)
+            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .center)
+            
         }
-        .navigationBarBackButtonHidden(true)
+        .navigationBarBackButtonHidden(false)
     }
 }
-//ProfileScreen
-//SearchSreen
 
 struct HomeScreenMain_Previews: PreviewProvider {
     static var previews: some View {
