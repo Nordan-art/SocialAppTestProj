@@ -39,7 +39,7 @@ struct ContentView: View {
                                        .stroke(Color.white, lineWidth: 2)
                            )
                        }
-                
+//
 //                Button(action: {
 //                    print("Login bin tapped")
 //                }) {
@@ -54,6 +54,7 @@ struct ContentView: View {
 //                    )
 //                }
 //                .cornerRadius(25)
+//
                 
                 Button(action: {
                     print("sign up bin tapped")
