@@ -14,10 +14,11 @@ struct SearchSreen: View {
     var body: some View {
         ScrollView(showsIndicators: false) {
             
-            ForEach(0..<10) { item in
+            ForEach(0..<100) { item in
+                
                 VStack(spacing: 20) {
-                    Text("BoundWidth \(BoundWidth)")
-                    Text("BoundHeight \(BoundHeight)")
+                    Text("BoundWidth: \(BoundWidth)")
+                    Text("BoundHeight: \(BoundHeight)")
                     Text("Item \(item)")
                         .foregroundColor(.white)
                         .font(.largeTitle)
@@ -28,22 +29,12 @@ struct SearchSreen: View {
             }
             .padding(.top, 30)
             
-//            VStack(spacing: 20) {
-//                ForEach(0..<10) {
-//                    Text("BoundWidth \(BoundWidth)")
-//                    Text("BoundHeight \(BoundHeight)")
-//                    Text("Item \($0)")
-//                        .foregroundColor(.white)
-//                        .font(.largeTitle)
-////                        .frame(width: BoundWidth - 20, height: 200)
-////                        .background(.red)
-////                        .cornerRadius(15)
-//                }
-//            }
-//            .frame(width: BoundWidth - 20, height: 200)
-//            .background(.red)
-//            .cornerRadius(15)
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(.black)
+//        .background(
+//            LinearGradient(gradient: Gradient(colors: [.indigo, .purple]), startPoint: .top, endPoint: .bottom)
+//        )
         .navigationBarBackButtonHidden(true)
     }
 }
