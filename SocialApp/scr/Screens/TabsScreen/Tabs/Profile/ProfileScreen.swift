@@ -31,74 +31,167 @@ struct ProfileScreen: View {
     
     var body: some View {
         
-        VStack {
-            if entitlementManager.hasPro {
-                ScrollView(showsIndicators: false) {
-                    VStack {
-                        Text("Thank you for purchasing")
-                    }
-                    .padding(.top, 70)
-                }
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background(.black)
+        //        ForEach(purchaseManager.purchasedProducts) { item in
+        //        }
+        //        ForEach(purchaseManager.purchasedProducts) {  }
+        
+        
+        
+        List {
+            Text("ProfileScreen product")
+                .navigationTitle("Home")
+            ForEach(purchaseManager.products) { product in
                 
-            } else {
-                List {
-                    Text("ProfileScreen product")
-                        .navigationTitle("Home")
-                    ForEach(purchaseManager.products) { product in
-                        Button {
-                            Task {
-                                do {
-                                    try await purchaseManager.purchase(product)
-                                } catch {
-                                    print(error)
-                                }
-                            }
-                        } label: {
-                            Text("\(product.displayPrice) - \(product.displayName)")
-                                .foregroundColor(.white)
-                                .padding()
-                                .background(.blue)
-                                .clipShape(Capsule())
-                        }
+                if (!purchaseManager.purchasedProducts.contains(product.id)) {
+                    Button {
+//                        Task {
+//                            do {
+//                                try await purchaseManager.purchase(product)
+//                            } catch {
+//                                print(error)
+//                            }
+//                        }
                         
-                        Button {
-                            Task {
-                                do {
-                                    try await AppStore.sync()
-                                } catch {
-                                    print(error)
-                                }
-                            }
-                        } label: {
-                            Text("Restore Purchases")
-                        }
+                        print(product.id)
+                    } label: {
+                        Text("\(product.displayPrice) - \(product.displayName)")
+                            .foregroundColor(.white)
+                            .padding()
+                            .background(.blue)
+                            .clipShape(Capsule())
                     }
-                }.task {
+                } else {
+                    Text("\(product.displayName) alredy was buyd")
+                }
+                
+             }
+            
+            Button {
+                Task {
                     do {
-                        print("loadProducts")
-                        try await purchaseManager.loadProducts()
+                        try await AppStore.sync()
                     } catch {
                         print(error)
                     }
                 }
+            } label: {
+                Text("Restore Purchases")
+            }
+            
+            Button {
+                print(purchaseManager.purchasedProducts)
+//                print(purchaseManager.products)
+                print(purchaseManager.purchasedProducts.contains("no_ads"))
+                
+                for item in purchaseManager.purchasedProducts {
+                    print(item)
+                }
+                
+            } label: {
+                Text("Show log print")
+                    .foregroundColor(.white)
+                    .padding()
+                    .background(.blue)
+                    .clipShape(Capsule())
             }
             
         }
         .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .center)
         .background( .white)
-        .padding(.top, 30)
+        .padding(.top, 100)
         .navigationBarBackButtonHidden(true)
         .task {
-            Task {
-                do {
-                    try await purchaseManager.loadProducts()
-                } catch {
-                    print(error)
-                }
+            do {
+                print("loadProducts")
+                try await purchaseManager.loadProducts()
+            } catch {
+                print(error)
             }
         }
+        
+        //                VStack {
+        //                    if true {
+        //                        //            if entitlementManager.hasPro {
+        //                        ScrollView(showsIndicators: false) {
+        //                            VStack {
+        //                                Text("Thank you for purchasing")
+        //                                //                        purchasedProducts
+        //                                Button {
+        //                                    print(purchaseManager.purchasedProducts)
+        //                                    print(purchaseManager.products)
+        //                                    for item in purchaseManager.purchasedProducts {
+        //                                        print(item)
+        //                                    }
+        //
+        //                                } label: {
+        //                                    Text("Show log print")
+        //                                        .foregroundColor(.white)
+        //                                        .padding()
+        //                                        .background(.blue)
+        //                                }
+        //                            }
+        //                            .padding(.top, 70)
+        //                        }
+        //                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        //                        .background(.black)
+        //
+        //                    } else {
+        //                        List {
+        //                            Text("ProfileScreen product")
+        //                                .navigationTitle("Home")
+        //                            ForEach(purchaseManager.products) { product in
+        //                                Button {
+        //                                    Task {
+        //                                        do {
+        //                                            try await purchaseManager.purchase(product)
+        //                                        } catch {
+        //                                            print(error)
+        //                                        }
+        //                                    }
+        //                                } label: {
+        //                                    Text("\(product.displayPrice) - \(product.displayName)")
+        //                                        .foregroundColor(.white)
+        //                                        .padding()
+        //                                        .background(.blue)
+        //                                        .clipShape(Capsule())
+        //                                }
+        //
+        //                                Button {
+        //                                    Task {
+        //                                        do {
+        //                                            try await AppStore.sync()
+        //                                        } catch {
+        //                                            print(error)
+        //                                        }
+        //                                    }
+        //                                } label: {
+        //                                    Text("Restore Purchases")
+        //                                }
+        //                            }
+        //                        }.task {
+        //                            do {
+        //                                print("loadProducts")
+        //                                try await purchaseManager.loadProducts()
+        //                            } catch {
+        //                                print(error)
+        //                            }
+        //                        }
+        //                    }
+        //
+        //                }
+        //                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .center)
+        //                .background( .white)
+        //                .padding(.top, 30)
+        //                .navigationBarBackButtonHidden(true)
+        //                .task {
+        //                    Task {
+        //                        do {
+        //                            try await purchaseManager.loadProducts()
+        //                        } catch {
+        //                            print(error)
+        //                        }
+        //                    }
+        //                }
         
     }
 }

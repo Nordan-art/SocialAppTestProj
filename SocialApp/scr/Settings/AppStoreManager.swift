@@ -19,11 +19,15 @@ class PurchaseManager: ObservableObject {
     @Published
     private(set) var purchasedProductIDs = Set<String>()
     
+    @Published
+    private(set) var purchasedProducts: [String] = []
+    
     private let entitlementManager: EntitlementManager
     private var productsLoaded = false
     private var updates: Task<Void, Never>? = nil
     
     init(entitlementManager: EntitlementManager) {
+        print(entitlementManager)
         self.entitlementManager = entitlementManager
         self.updates = observeTransactionUpdates()
     }
@@ -46,6 +50,7 @@ class PurchaseManager: ObservableObject {
         print("count the length of purchese item \(try await Product.products(for: productIds).count)")
         self.products = try await Product.products(for: productIds)
         self.productsLoaded = true
+        print("products ================= \(products)")
     }
     
     func purchase(_ product: Product) async throws {
@@ -80,9 +85,17 @@ class PurchaseManager: ObservableObject {
             if transaction.revocationDate == nil {
                 print("insert \(transaction.productID)")
                 self.purchasedProductIDs.insert(transaction.productID)
+                self.purchasedProducts.append(transaction.productID)
+                print(purchasedProducts)
             } else {
                 print("remove \(transaction.productID)")
                 self.purchasedProductIDs.remove(transaction.productID)
+                for item in purchasedProducts {
+                    if item == transaction.productID {
+                        purchasedProducts.remove(at: purchasedProducts.firstIndex(of: transaction.productID)!)
+                        print(purchasedProducts)
+                    }
+                }
             }
         }
         self.entitlementManager.hasPro = !self.purchasedProductIDs.isEmpty
