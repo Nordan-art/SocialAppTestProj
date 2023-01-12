@@ -24,7 +24,7 @@ struct LoginView: View {
 //            Text("\(DataPass)")
             
 //            MARK: - NameTextField
-            TextField("Name", text: $email)
+            TextField("login", text: $email)
                             .textFieldStyle(
                                 GradientTextFieldBackground(
                                     systemImageString: "envelope"
@@ -34,7 +34,7 @@ struct LoginView: View {
                             .padding(.bottom, 20)
             
 //            MARK: - EmailTextField
-            TextField("Email", text: $password)
+            TextField("pass", text: $password)
                             .textFieldStyle(
                                 GradientTextFieldBackground(
                                     systemImageString: "lock"
@@ -43,42 +43,26 @@ struct LoginView: View {
                             .frame(minWidth: 100, maxWidth: 250)
                             .padding(.bottom, 20)
             
-//            Button(action: {
-//                HomeScreenMain()
-//            }) {
-//                Text("Login")
-//                    .frame(minWidth: 0, maxWidth: 100, minHeight: 0, maxHeight: 10)
-//                    .font(.system(size: 18))
-//                    .padding()
-//                    .foregroundColor(.white)
-//                    .overlay(
-//                        RoundedRectangle(cornerRadius: 25)
-//                            .stroke(Color.white, lineWidth: 2)
-//                    )
-//            }
-//            .cornerRadius(25)
-            
-//            NavigationLink {
-//                SendLoginData()
-////                TabsScreen()
-//            } label: {
-//                Text("LOGIN")
-//                    .frame(minWidth: 0, maxWidth: 100, minHeight: 0, maxHeight: 10)
-//                    .font(.system(size: 18))
-//                    .padding()
-//                    .foregroundColor(.white)
-//                    .overlay(
-//                        RoundedRectangle(cornerRadius: 25)
-//                            .stroke(Color.white, lineWidth: 1)
-//                    )
-//            }
-//            .navigationBarBackButtonHidden(false)
-//            .navigationTitle("")
+            NavigationLink {
+                            TabsScreen()
+                        } label: {
+                            Text("NavLogin")
+                                .frame(minWidth: 0, maxWidth: 100, minHeight: 0, maxHeight: 10)
+                                .font(.system(size: 18))
+                                .padding()
+                                .foregroundColor(.white)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 25)
+                                        .stroke(Color.white, lineWidth: 1)
+                                )
+                        }
+                        .navigationBarBackButtonHidden(false)
+                        .navigationTitle("")
             
             Button(action: {
                 SendLoginData()
             }) {
-                Text("LOGIN")
+                Text("Login")
                     .frame(minWidth: 0, maxWidth: 100, minHeight: 0, maxHeight: 10)
                     .font(.system(size: 18))
                     .padding()
@@ -93,7 +77,7 @@ struct LoginView: View {
             Button(action: {
                 dismiss()
             }) {
-                Text("Return")
+                Text("Sign up")
                     .frame(minWidth: 0, maxWidth: 100, minHeight: 0, maxHeight: 10)
                     .font(.system(size: 18))
                     .padding()

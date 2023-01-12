@@ -32,9 +32,6 @@ struct SearchSreen: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(.black)
-//        .background(
-//            LinearGradient(gradient: Gradient(colors: [.indigo, .purple]), startPoint: .top, endPoint: .bottom)
-//        )
         .navigationBarBackButtonHidden(true)
     }
 }

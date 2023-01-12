@@ -55,20 +55,10 @@ func SendLoginData( ) {
         
         // do whatever you want with the `data`, e.g.:
         
-        do {
-            let responseObject = try JSONDecoder().decode(ResponseObject<Foo>.self, from: data)
-            print("================================")
-            print("responseObject \(responseObject)")
-            print("data \(data)")
-            print(type(of: data))
-        } catch {
-            print(error) // parsing error
-            
-            if let responseString = String(data: data, encoding: .utf8) {
-                print("responseString = \(responseString)")
-            } else {
-                print("unable to parse response as string")
-            }
+        if let responseString = String(data: data, encoding: .utf8) {
+            print("responseString = \(responseString)")
+        } else {
+            print("unable to parse response as string")
         }
     }
 

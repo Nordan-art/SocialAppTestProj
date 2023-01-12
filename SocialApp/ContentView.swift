@@ -21,6 +21,7 @@ struct ContentView: View {
                 
                 NavigationLink {
                     LoginView(DataPass: DataPass)
+                    
                 } label: {
                     Text("LOGIN")
                         .frame(minWidth: 0, maxWidth: 100, minHeight: 0, maxHeight: 10)
