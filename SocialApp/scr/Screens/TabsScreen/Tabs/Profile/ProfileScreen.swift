@@ -24,59 +24,71 @@ struct ProfileScreen: View {
     var BoundHeight = UIScreen.main.bounds.size.height
     
     @EnvironmentObject
-    var purchaseManager: PurchaseManager
+    private var entitlementManager: EntitlementManager
+    
+    @EnvironmentObject
+    private var purchaseManager: PurchaseManager
     
     var body: some View {
-        ZStack {
-            VStack {
+        
+        VStack {
+            if entitlementManager.hasPro {
+                ScrollView(showsIndicators: false) {
+                    VStack {
+                        Text("Thank you for purchasing")
+                    }
+                    .padding(.top, 70)
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(.black)
                 
-                if purchaseManager.hasUnlockedPro {
-                    ScrollView(showsIndicators: false) {
-                        VStack {
-                            Text("Thank you for purchasing")
+            } else {
+                List {
+                    Text("ProfileScreen product")
+                        .navigationTitle("Home")
+                    ForEach(purchaseManager.products) { product in
+                        Button {
+                            Task {
+                                do {
+                                    try await purchaseManager.purchase(product)
+                                } catch {
+                                    print(error)
+                                }
+                            }
+                        } label: {
+                            Text("\(product.displayPrice) - \(product.displayName)")
+                                .foregroundColor(.white)
+                                .padding()
+                                .background(.blue)
+                                .clipShape(Capsule())
                         }
                         
-                        .padding(.top, 70)
-                    }
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .background(.black)
-                    
-                } else {
-                    List {
-                        Text("ProfileScreen product")
-                            .navigationTitle("Home")
-                        ForEach(purchaseManager.products) { product in
-                            Button {
-                                Task {
-                                    do {
-                                        try await purchaseManager.purchase(product)
-                                    } catch {
-                                        print(error)
-                                    }
+                        Button {
+                            Task {
+                                do {
+                                    try await AppStore.sync()
+                                } catch {
+                                    print(error)
                                 }
-                            } label: {
-                                Text("\(product.displayPrice) - \(product.displayName)")
-                                    .foregroundColor(.white)
-                                    .padding()
-                                    .background(.blue)
-                                    .clipShape(Capsule())
                             }
+                        } label: {
+                            Text("Restore Purchases")
                         }
-                    }.task {
-                        do {
-                            print("loadProducts")
-                            try await purchaseManager.loadProducts()
-                        } catch {
-                            print(error)
-                        }
+                    }
+                }.task {
+                    do {
+                        print("loadProducts")
+                        try await purchaseManager.loadProducts()
+                    } catch {
+                        print(error)
                     }
                 }
-                
             }
-            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .center)
-            .background( .white)
-            .padding(.top, 30)
+            
         }
+        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .center)
+        .background( .white)
+        .padding(.top, 30)
         .navigationBarBackButtonHidden(true)
         .task {
             Task {
@@ -87,6 +99,7 @@ struct ProfileScreen: View {
                 }
             }
         }
+        
     }
 }
 

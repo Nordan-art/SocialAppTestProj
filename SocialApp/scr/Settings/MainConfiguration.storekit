@@ -1,5 +1,5 @@
 {
-  "identifier" : "CD5837CD",
+  "identifier" : "24929D92",
   "nonRenewingSubscriptions" : [
 
   ],
@@ -18,12 +18,27 @@
       "productID" : "no_ads",
       "referenceName" : "Remove Ads",
       "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "6445391618",
+      "localizations" : [
+        {
+          "description" : "user can order delivery of cookes",
+          "displayName" : "Send free cookes",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "free_cooke",
+      "referenceName" : "Send free cookes",
+      "type" : "Consumable"
     }
   ],
   "settings" : {
     "_applicationInternalID" : "1664550203",
     "_developerTeamID" : "H6V832Q56J",
-    "_lastSynchronizedDate" : 695218533.46018505
+    "_lastSynchronizedDate" : 695230155.30576003
   },
   "subscriptionGroups" : [
 

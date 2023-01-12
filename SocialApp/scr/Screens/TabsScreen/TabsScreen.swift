@@ -10,7 +10,18 @@ import SwiftUI
 struct TabsScreen: View {
     
     @StateObject
-    private var purchaseManager = PurchaseManager()
+    private var entitlementManager: EntitlementManager
+    
+    @StateObject
+    private var purchaseManager: PurchaseManager
+    
+    init() {
+        let entitlementManager = EntitlementManager()
+        let purchaseManager = PurchaseManager(entitlementManager: entitlementManager)
+        
+        self._entitlementManager = StateObject(wrappedValue: entitlementManager)
+        self._purchaseManager = StateObject(wrappedValue: purchaseManager)
+    }
     
     var body: some View {
         ZStack {
@@ -29,6 +40,7 @@ struct TabsScreen: View {
                         }
                     
                     ProfileScreen()
+                        .environmentObject(entitlementManager)
                         .environmentObject(purchaseManager)
                         .task {
                             await purchaseManager.updatePurchasedProducts()
@@ -39,9 +51,6 @@ struct TabsScreen: View {
                         .badge(3)
                 }
                 .toolbarColorScheme(.dark, for: .tabBar)
-                //                .toolbar(.visible, for: .tabBar)
-                //                   .toolbarBackground(Color.yellow, for: .tabBar)
-                
                 
             }
             //            .toolbarBackground(.visible, for: .navigationBar, .tabBar)

@@ -11,34 +11,39 @@ import StoreKit
 @MainActor
 class PurchaseManager: ObservableObject {
     
-    private let productIds = ["no_ads"]
+    private let productIds = ["no_ads", "free_cooke"]
     
     @Published
     private(set) var products: [Product] = []
     
-    private var productsLoaded = false
-    
     @Published
     private(set) var purchasedProductIDs = Set<String>()
     
+    private let entitlementManager: EntitlementManager
+    private var productsLoaded = false
     private var updates: Task<Void, Never>? = nil
     
-    init() {
-        updates = observeTransactionUpdates()
+    init(entitlementManager: EntitlementManager) {
+        self.entitlementManager = entitlementManager
+        self.updates = observeTransactionUpdates()
     }
     
     deinit {
-        updates?.cancel()
+        self.updates?.cancel()
     }
     
     var hasUnlockedPro: Bool {
-        print(purchasedProductIDs)
+        print("products: \(products)")
+        print("products: \(products.count)")
+        print("purchasedProductIDs: \(purchasedProductIDs)")
         print(!self.purchasedProductIDs.isEmpty)
         return !self.purchasedProductIDs.isEmpty
     }
     
     func loadProducts() async throws {
         guard !self.productsLoaded else { return }
+        print("array what i get when order all purchase item\(try await Product.products(for: productIds))")
+        print("count the length of purchese item \(try await Product.products(for: productIds).count)")
         self.products = try await Product.products(for: productIds)
         self.productsLoaded = true
     }
@@ -80,15 +85,18 @@ class PurchaseManager: ObservableObject {
                 self.purchasedProductIDs.remove(transaction.productID)
             }
         }
+        self.entitlementManager.hasPro = !self.purchasedProductIDs.isEmpty
     }
     
     private func observeTransactionUpdates() -> Task<Void, Never> {
         Task(priority: .background) { [unowned self] in
-            for await verificationResult in Transaction.updates {
+            //            for await verificationResult in Transaction.updates {
+            for await _ in Transaction.updates {
                 // Using verificationResult directly would be better
                 // but this way works for this tutorial
                 await self.updatePurchasedProducts()
             }
         }
     }
+    
 }

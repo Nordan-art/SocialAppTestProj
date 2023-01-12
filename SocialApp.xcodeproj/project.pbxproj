@@ -21,6 +21,7 @@
 		A9A6154E295DA503009788E4 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A6154D295DA503009788E4 /* LoginView.swift */; };
 		A9C4CDE6296F2825005CD7FC /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9C4CDE5296F2825005CD7FC /* StoreKit.framework */; };
 		A9C4CDEB2970084A005CD7FC /* AppStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C4CDEA2970084A005CD7FC /* AppStoreManager.swift */; };
+		A9C4CDEF29706776005CD7FC /* EntitlementManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C4CDEE29706776005CD7FC /* EntitlementManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,9 +40,9 @@
 		A9A6154D295DA503009788E4 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		A9C4CDE3296F2818005CD7FC /* SocialApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SocialApp.entitlements; sourceTree = "<group>"; };
 		A9C4CDE5296F2825005CD7FC /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		A9C4CDE8296F37A0005CD7FC /* MainConfiguration(notSync).storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = "MainConfiguration(notSync).storekit"; sourceTree = "<group>"; };
 		A9C4CDEA2970084A005CD7FC /* AppStoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreManager.swift; sourceTree = "<group>"; };
-		A9C4CDEC29703160005CD7FC /* MainConfiguration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = MainConfiguration.storekit; sourceTree = "<group>"; };
+		A9C4CDED29705E29005CD7FC /* MainConfiguration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = MainConfiguration.storekit; sourceTree = "<group>"; };
+		A9C4CDEE29706776005CD7FC /* EntitlementManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntitlementManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,9 +202,9 @@
 		A9C4CDE7296F377C005CD7FC /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				A9C4CDE8296F37A0005CD7FC /* MainConfiguration(notSync).storekit */,
+				A9C4CDED29705E29005CD7FC /* MainConfiguration.storekit */,
 				A9C4CDEA2970084A005CD7FC /* AppStoreManager.swift */,
-				A9C4CDEC29703160005CD7FC /* MainConfiguration.storekit */,
+				A9C4CDEE29706776005CD7FC /* EntitlementManager.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -281,6 +282,7 @@
 				A9967CBC296C70BF0049F440 /* LoginInputStyle.swift in Sources */,
 				A9967CBA296C69A50049F440 /* NavigationFuncs.swift in Sources */,
 				A9A6154E295DA503009788E4 /* LoginView.swift in Sources */,
+				A9C4CDEF29706776005CD7FC /* EntitlementManager.swift in Sources */,
 				A9C4CDEB2970084A005CD7FC /* AppStoreManager.swift in Sources */,
 				A9967CC9296C7C230049F440 /* TabsScreen.swift in Sources */,
 				A9967CB7296C69760049F440 /* LoginData.swift in Sources */,
