@@ -1,27 +1,29 @@
 {
-  "identifier" : "554885A4",
+  "identifier" : "CD5837CD",
   "nonRenewingSubscriptions" : [
 
   ],
   "products" : [
     {
-      "displayPrice" : "0.99",
+      "displayPrice" : "0.0",
       "familyShareable" : false,
-      "internalID" : "A6B43BE1",
+      "internalID" : "6445384834",
       "localizations" : [
         {
-          "description" : "Lifetime",
-          "displayName" : "Lifetime",
+          "description" : "removing ads from application",
+          "displayName" : "Remove ADS",
           "locale" : "en_US"
         }
       ],
-      "productID" : "pro_lifetime",
-      "referenceName" : "Lifetime",
-      "type" : "Consumable"
+      "productID" : "no_ads",
+      "referenceName" : "Remove Ads",
+      "type" : "NonConsumable"
     }
   ],
   "settings" : {
-
+    "_applicationInternalID" : "1664550203",
+    "_developerTeamID" : "H6V832Q56J",
+    "_lastSynchronizedDate" : 695218533.46018505
   },
   "subscriptionGroups" : [
 

@@ -11,7 +11,7 @@ import StoreKit
 @MainActor
 class PurchaseManager: ObservableObject {
     
-    private let productIds = ["pro_lifetime"]
+    private let productIds = ["no_ads"]
     
     @Published
     private(set) var products: [Product] = []
@@ -32,6 +32,7 @@ class PurchaseManager: ObservableObject {
     }
     
     var hasUnlockedPro: Bool {
+        print(purchasedProductIDs)
         print(!self.purchasedProductIDs.isEmpty)
         return !self.purchasedProductIDs.isEmpty
     }

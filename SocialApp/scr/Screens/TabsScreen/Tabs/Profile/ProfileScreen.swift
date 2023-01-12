@@ -24,15 +24,23 @@ struct ProfileScreen: View {
     var BoundHeight = UIScreen.main.bounds.size.height
     
     @EnvironmentObject
-     var purchaseManager: PurchaseManager
+    var purchaseManager: PurchaseManager
     
     var body: some View {
         ZStack {
             VStack {
                 
                 if purchaseManager.hasUnlockedPro {
-                            Text("Thank you for purchasing pro!")
-                        .padding(.top, 60)
+                    ScrollView(showsIndicators: false) {
+                        VStack {
+                            Text("Thank you for purchasing")
+                        }
+                        
+                        .padding(.top, 70)
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .background(.black)
+                    
                 } else {
                     List {
                         Text("ProfileScreen product")
@@ -69,9 +77,6 @@ struct ProfileScreen: View {
             .background( .white)
             .padding(.top, 30)
         }
-//        .frame(width: BoundWidth - 20, height: 200)
-//        .background(.red)
-//        .cornerRadius(15)
         .navigationBarBackButtonHidden(true)
         .task {
             Task {
