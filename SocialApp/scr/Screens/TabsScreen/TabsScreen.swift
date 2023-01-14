@@ -22,7 +22,7 @@ struct TabsScreen: View {
         self._entitlementManager = StateObject(wrappedValue: entitlementManager)
         self._purchaseManager = StateObject(wrappedValue: purchaseManager)
     }
-    
+        
     var body: some View {
         ZStack {
             TabView {
@@ -37,6 +37,11 @@ struct TabsScreen: View {
                     SearchSreen()
                         .tabItem {
                             Label("", systemImage: "square.and.pencil")
+                        }
+                    
+                    WebViewRenderScreen()
+                        .tabItem {
+                            Label("", systemImage: "network")
                         }
                     
                     ProfileScreen()
@@ -56,11 +61,11 @@ struct TabsScreen: View {
             //            .toolbarBackground(.visible, for: .navigationBar, .tabBar)
             //            .toolbarBackground(.red, for: .tabBar)
         }
-        .safeAreaInset(edge: .top, alignment: .center, spacing: 45) {
-            Color.clear
-                .frame(height: 20)
-                .background(Material.bar)
-        }
+//        .safeAreaInset(edge: .top, alignment: .center, spacing: 45) {
+//            Color.clear
+//                .frame(height: 20)
+//                .background(Material.bar)
+//        }
         .navigationBarBackButtonHidden(true)
     }
 }

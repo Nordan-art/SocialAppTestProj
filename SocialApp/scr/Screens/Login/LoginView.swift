@@ -19,6 +19,8 @@ struct LoginView: View {
     @State var email: String = ""
     @State var password: String = ""
     
+    var url: NSURL = NSURL(string: "http://crm.mcgroup.pl/mcgroup_crmAPI/alfa/task?id=23&item=consultM&price=100")!
+    
     var body: some View {
         VStack(alignment: .center) {
 //            Text("\(DataPass)")
@@ -75,7 +77,22 @@ struct LoginView: View {
             .cornerRadius(25)
             
             Button(action: {
-                dismiss()
+//                dismiss()
+                print(url.query!)
+                print(url.query!.components(separatedBy: "&") )
+                let components = url.query!.components(separatedBy: "&")
+                for item in components {
+                    if (item.components(separatedBy: "=")[0] == "id") {
+                        print(item.components(separatedBy: "=")[1] )
+                    }
+                    if (item.components(separatedBy: "=")[0] == "price") {
+                        print(item.components(separatedBy: "=")[1] )
+                    }
+                    if (item.components(separatedBy: "=")[0] == "item") {
+                        print(item.components(separatedBy: "=")[1] )
+                    }
+                    
+                }
             }) {
                 Text("Sign up")
                     .frame(minWidth: 0, maxWidth: 100, minHeight: 0, maxHeight: 10)

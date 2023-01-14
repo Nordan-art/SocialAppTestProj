@@ -13,6 +13,11 @@
           "description" : "removing ads from application",
           "displayName" : "Remove ADS",
           "locale" : "en_US"
+        },
+        {
+          "description" : "Убирает рекламу в приложении",
+          "displayName" : "Убрать рекламу",
+          "locale" : "ru"
         }
       ],
       "productID" : "no_ads",
@@ -38,10 +43,43 @@
   "settings" : {
     "_applicationInternalID" : "1664550203",
     "_developerTeamID" : "H6V832Q56J",
-    "_lastSynchronizedDate" : 695230155.30576003
+    "_lastSynchronizedDate" : 695308992.13064694
   },
   "subscriptionGroups" : [
+    {
+      "id" : "21146941",
+      "localizations" : [
 
+      ],
+      "name" : "Deliver cookie",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "0.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "6445412480",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "delivery of cookie for one week after buy",
+              "displayName" : "Deliver cookie for 1 week",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "one_week_deliv",
+          "recurringSubscriptionPeriod" : "P1W",
+          "referenceName" : "One week deliver cookie",
+          "subscriptionGroupID" : "21146941",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
   ],
   "version" : {
     "major" : 2,

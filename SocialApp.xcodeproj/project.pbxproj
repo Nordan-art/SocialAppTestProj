@@ -22,6 +22,8 @@
 		A9C4CDE6296F2825005CD7FC /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9C4CDE5296F2825005CD7FC /* StoreKit.framework */; };
 		A9C4CDEB2970084A005CD7FC /* AppStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C4CDEA2970084A005CD7FC /* AppStoreManager.swift */; };
 		A9C4CDEF29706776005CD7FC /* EntitlementManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C4CDEE29706776005CD7FC /* EntitlementManager.swift */; };
+		A9C4CDF22970ADE8005CD7FC /* WebViewRenderScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C4CDF12970ADE8005CD7FC /* WebViewRenderScreen.swift */; };
+		A9C4CDF52970AE0A005CD7FC /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C4CDF42970AE0A005CD7FC /* WebView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,8 @@
 		A9C4CDEA2970084A005CD7FC /* AppStoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreManager.swift; sourceTree = "<group>"; };
 		A9C4CDED29705E29005CD7FC /* MainConfiguration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = MainConfiguration.storekit; sourceTree = "<group>"; };
 		A9C4CDEE29706776005CD7FC /* EntitlementManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntitlementManager.swift; sourceTree = "<group>"; };
+		A9C4CDF12970ADE8005CD7FC /* WebViewRenderScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewRenderScreen.swift; sourceTree = "<group>"; };
+		A9C4CDF42970AE0A005CD7FC /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +150,7 @@
 		A9967CCA296C7C2C0049F440 /* Tabs */ = {
 			isa = PBXGroup;
 			children = (
+				A9C4CDF02970AD5C005CD7FC /* WebViewScreen */,
 				A9967CC2296C7B230049F440 /* Profile */,
 				A9967CC1296C7B1C0049F440 /* Serach */,
 				A9967CBE296C78D10049F440 /* HomeScreens */,
@@ -207,6 +212,23 @@
 				A9C4CDEE29706776005CD7FC /* EntitlementManager.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		A9C4CDF02970AD5C005CD7FC /* WebViewScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A9C4CDF32970ADF2005CD7FC /* WebVeiwFuncs */,
+				A9C4CDF12970ADE8005CD7FC /* WebViewRenderScreen.swift */,
+			);
+			path = WebViewScreen;
+			sourceTree = "<group>";
+		};
+		A9C4CDF32970ADF2005CD7FC /* WebVeiwFuncs */ = {
+			isa = PBXGroup;
+			children = (
+				A9C4CDF42970AE0A005CD7FC /* WebView.swift */,
+			);
+			path = WebVeiwFuncs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,12 +307,14 @@
 				A9C4CDEF29706776005CD7FC /* EntitlementManager.swift in Sources */,
 				A9C4CDEB2970084A005CD7FC /* AppStoreManager.swift in Sources */,
 				A9967CC9296C7C230049F440 /* TabsScreen.swift in Sources */,
+				A9C4CDF22970ADE8005CD7FC /* WebViewRenderScreen.swift in Sources */,
 				A9967CB7296C69760049F440 /* LoginData.swift in Sources */,
 				A9967CC6296C7B550049F440 /* ProfileScreen.swift in Sources */,
 				A9A61540295D8DE2009788E4 /* ContentView.swift in Sources */,
 				A9A6153E295D8DE2009788E4 /* SocialAppApp.swift in Sources */,
 				A9967CC0296C791C0049F440 /* HomeScreenMain.swift in Sources */,
 				A9967CC4296C7B470049F440 /* SearchSreen.swift in Sources */,
+				A9C4CDF52970AE0A005CD7FC /* WebView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,7 +458,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.MCGroup.SocialApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -469,7 +493,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.MCGroup.SocialApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

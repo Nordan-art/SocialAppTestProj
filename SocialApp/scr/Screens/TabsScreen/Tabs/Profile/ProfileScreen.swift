@@ -20,6 +20,7 @@ import StoreKit
 //}
 
 struct ProfileScreen: View {
+    var url: NSURL = NSURL(string: "http://crm.mcgroup.pl/mcgroup_crmAPI/alfa/task?id=23&item=consultM&price=100")!
     var BoundWidth = UIScreen.main.bounds.size.width
     var BoundHeight = UIScreen.main.bounds.size.height
     
@@ -35,8 +36,6 @@ struct ProfileScreen: View {
         //        }
         //        ForEach(purchaseManager.purchasedProducts) {  }
         
-        
-        
         List {
             Text("ProfileScreen product")
                 .navigationTitle("Home")
@@ -44,15 +43,16 @@ struct ProfileScreen: View {
                 
                 if (!purchaseManager.purchasedProducts.contains(product.id)) {
                     Button {
-//                        Task {
-//                            do {
-//                                try await purchaseManager.purchase(product)
-//                            } catch {
-//                                print(error)
-//                            }
-//                        }
+                        Task {
+                            do {
+                                try await purchaseManager.purchase(product)
+                            } catch {
+                                print(error)
+                            }
+                        }
                         
                         print(product.id)
+                        print(product)
                     } label: {
                         Text("\(product.displayPrice) - \(product.displayName)")
                             .foregroundColor(.white)
@@ -64,7 +64,7 @@ struct ProfileScreen: View {
                     Text("\(product.displayName) alredy was buyd")
                 }
                 
-             }
+            }
             
             Button {
                 Task {
@@ -79,12 +79,50 @@ struct ProfileScreen: View {
             }
             
             Button {
-                print(purchaseManager.purchasedProducts)
-//                print(purchaseManager.products)
-                print(purchaseManager.purchasedProducts.contains("no_ads"))
+//                print(purchaseManager.purchasedProducts)
+//                print(purchaseManager.purchasedProducts.contains("no_ads"))
+//                for item in purchaseManager.purchasedProducts {
+//                    print(item)
+//                }
                 
-                for item in purchaseManager.purchasedProducts {
-                    print(item)
+//                print(url.query!)
+//                print(url.query!.components(separatedBy: "&") )
+                let components = url.query!.components(separatedBy: "&")
+                for itemPaymentsElement in purchaseManager.products {
+                    print("itemPaymentsElement first print log")
+                    
+                    for itemKey in purchaseManager.purchasedProducts {
+                        print("itemPayments first log")
+                        
+                        for item in components {
+                            if (item.components(separatedBy: "=")[0] == "id") {
+                                print(item.components(separatedBy: "=")[1] )
+                                if("free_cooke" == itemPaymentsElement.id) {
+//                                if(item.components(separatedBy: "=")[1] == itemPaymentsElement.id) {
+                                    print("itemPayments: \(itemKey)")
+                                    print("itemPaymentsElement: VVV")
+                                    print(itemPaymentsElement)
+                                    print(itemPaymentsElement.id)
+                                } else {
+                                    print("id from url != itemPaymentsElement.id: \(itemPaymentsElement.id)")
+                                }
+                            }
+                            
+                            if (item.components(separatedBy: "=")[0] == "price") {
+                                print(item.components(separatedBy: "=")[1] )
+                                if(item.components(separatedBy: "=")[1] == "100") {
+                                    print("itemPayments \(itemKey)")
+                                }
+                            }
+                            
+                            if (item.components(separatedBy: "=")[0] == "item") {
+                                print(item.components(separatedBy: "=")[1] )
+                                if(item.components(separatedBy: "=")[1] == "consultM") {
+                                    print("itemPayments \(itemKey)")
+                                }
+                            }
+                        }
+                    }
                 }
                 
             } label: {

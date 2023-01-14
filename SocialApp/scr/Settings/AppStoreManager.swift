@@ -11,7 +11,7 @@ import StoreKit
 @MainActor
 class PurchaseManager: ObservableObject {
     
-    private let productIds = ["no_ads", "free_cooke"]
+    private let productIds = ["no_ads", "free_cooke", "one_week_deliv"]
     
     @Published
     private(set) var products: [Product] = []
@@ -46,8 +46,8 @@ class PurchaseManager: ObservableObject {
     
     func loadProducts() async throws {
         guard !self.productsLoaded else { return }
-        print("array what i get when order all purchase item\(try await Product.products(for: productIds))")
-        print("count the length of purchese item \(try await Product.products(for: productIds).count)")
+//        print("array what i get when order all purchase item\(try await Product.products(for: productIds))")
+//        print("count the length of purchese item \(try await Product.products(for: productIds).count)")
         self.products = try await Product.products(for: productIds)
         self.productsLoaded = true
         print("products ================= \(products)")
@@ -63,12 +63,16 @@ class PurchaseManager: ObservableObject {
         case let .success(.unverified(_, error)):
             // Successful purchase but transaction/receipt can't be verified
             // Could be a jailbroken phone
+                print("success but device are unverified")
             break
         case .pending:
             // Transaction waiting on SCA (Strong Customer Authentication) or
             // approval from Ask to Buy
+            print("Pending for payment sction")
             break
         case .userCancelled:
+            print(result)
+            print("user cancel payment action")
             // ^^^
             break
         @unknown default:
@@ -81,7 +85,7 @@ class PurchaseManager: ObservableObject {
             guard case .verified(let transaction) = result else {
                 continue
             }
-            
+            print("transaction: \(transaction)")
             if transaction.revocationDate == nil {
                 print("insert \(transaction.productID)")
                 self.purchasedProductIDs.insert(transaction.productID)
