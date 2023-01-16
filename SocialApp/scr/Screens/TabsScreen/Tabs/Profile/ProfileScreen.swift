@@ -32,16 +32,12 @@ struct ProfileScreen: View {
     
     var body: some View {
         
-        //        ForEach(purchaseManager.purchasedProducts) { item in
-        //        }
-        //        ForEach(purchaseManager.purchasedProducts) {  }
-        
         List {
             Text("ProfileScreen product")
                 .navigationTitle("Home")
             ForEach(purchaseManager.products) { product in
                 
-                if (!purchaseManager.purchasedProducts.contains(product.id)) {
+//                if (!purchaseManager.purchasedProducts.contains(product.id)) {
                     Button {
                         Task {
                             do {
@@ -60,10 +56,10 @@ struct ProfileScreen: View {
                             .background(.blue)
                             .clipShape(Capsule())
                     }
-                } else {
-                    Text("\(product.displayName) alredy was buyd")
-                }
-                
+//                } else {
+//                    Text("\(product.displayName) alredy was buyd")
+//                }
+//
             }
             
             Button {

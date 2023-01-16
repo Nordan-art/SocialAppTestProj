@@ -37,10 +37,10 @@ class PurchaseManager: ObservableObject {
     }
     
     var hasUnlockedPro: Bool {
-        print("products: \(products)")
-        print("products: \(products.count)")
-        print("purchasedProductIDs: \(purchasedProductIDs)")
-        print(!self.purchasedProductIDs.isEmpty)
+//        print("products: \(products)")
+//        print("products: \(products.count)")
+//        print("purchasedProductIDs: \(purchasedProductIDs)")
+//        print(!self.purchasedProductIDs.isEmpty)
         return !self.purchasedProductIDs.isEmpty
     }
     
@@ -50,7 +50,7 @@ class PurchaseManager: ObservableObject {
 //        print("count the length of purchese item \(try await Product.products(for: productIds).count)")
         self.products = try await Product.products(for: productIds)
         self.productsLoaded = true
-        print("products ================= \(products)")
+//        print("products ================= \(products)")
     }
     
     func purchase(_ product: Product) async throws {
@@ -81,18 +81,25 @@ class PurchaseManager: ObservableObject {
     }
     
     func updatePurchasedProducts() async {
+        print("before cycle, on of update func")
+        print(Transaction.currentEntitlements)
         for await result in Transaction.currentEntitlements {
+            print("before verified")
+            print("before verified result: \(result)")
             guard case .verified(let transaction) = result else {
                 continue
             }
+            print("result: \(result)")
             print("transaction: \(transaction)")
+            print("transaction.productID: \(transaction.productID)")
+            print("transaction.productType: \(transaction.productType)")
             if transaction.revocationDate == nil {
-                print("insert \(transaction.productID)")
+//                print("insert \(transaction.productID)")
                 self.purchasedProductIDs.insert(transaction.productID)
                 self.purchasedProducts.append(transaction.productID)
                 print(purchasedProducts)
             } else {
-                print("remove \(transaction.productID)")
+//                print("remove \(transaction.productID)")
                 self.purchasedProductIDs.remove(transaction.productID)
                 for item in purchasedProducts {
                     if item == transaction.productID {
