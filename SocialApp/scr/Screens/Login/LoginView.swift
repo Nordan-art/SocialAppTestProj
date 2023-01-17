@@ -78,6 +78,12 @@ struct LoginView: View {
             
             Button(action: {
 //                dismiss()
+//                print("current time: \(Int(Date().timeIntervalSince1970))")
+//                print("current time add 1 hour: \(Int(Date().timeIntervalSince1970 + 3_600_000))")
+                let startTime = Date.now
+                let endTime = startTime.adding(hours: 1)
+                print("startTime \(Int(startTime.timeIntervalSince1970))")
+                print("endTime \(Int(endTime.timeIntervalSince1970))")
                 print(url.query!)
                 print(url.query!.components(separatedBy: "&") )
                 let components = url.query!.components(separatedBy: "&")
@@ -111,6 +117,16 @@ struct LoginView: View {
         .background(
             LinearGradient(gradient: Gradient(colors: [.indigo, .purple]), startPoint: .top, endPoint: .bottom)
         )
+    }
+}
+
+extension Date {
+    func adding(minutes: Int) -> Date {
+        Calendar.current.date(byAdding: .minute, value: minutes, to: self)!
+    }
+
+    func adding(hours: Int) -> Date {
+        Calendar.current.date(byAdding: .hour, value: hours, to: self)!
     }
 }
 

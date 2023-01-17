@@ -24,6 +24,7 @@
 		A9C4CDEF29706776005CD7FC /* EntitlementManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C4CDEE29706776005CD7FC /* EntitlementManager.swift */; };
 		A9C4CDF22970ADE8005CD7FC /* WebViewRenderScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C4CDF12970ADE8005CD7FC /* WebViewRenderScreen.swift */; };
 		A9C4CDF52970AE0A005CD7FC /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C4CDF42970AE0A005CD7FC /* WebView.swift */; };
+		A9C4CE0A2977194A005CD7FC /* SubscriptionKey_S6324MBQLK.p8 in Resources */ = {isa = PBXBuildFile; fileRef = A9C4CE092977194A005CD7FC /* SubscriptionKey_S6324MBQLK.p8 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		A9C4CDEE29706776005CD7FC /* EntitlementManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntitlementManager.swift; sourceTree = "<group>"; };
 		A9C4CDF12970ADE8005CD7FC /* WebViewRenderScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewRenderScreen.swift; sourceTree = "<group>"; };
 		A9C4CDF42970AE0A005CD7FC /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		A9C4CE092977194A005CD7FC /* SubscriptionKey_S6324MBQLK.p8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SubscriptionKey_S6324MBQLK.p8; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 		A9967CB5296C69540049F440 /* LoginData */ = {
 			isa = PBXGroup;
 			children = (
+				A9C4CE092977194A005CD7FC /* SubscriptionKey_S6324MBQLK.p8 */,
 				A9967CB6296C69750049F440 /* LoginData.swift */,
 				A9967CBB296C70BF0049F440 /* LoginInputStyle.swift */,
 			);
@@ -247,6 +250,8 @@
 			dependencies = (
 			);
 			name = SocialApp;
+			packageProductDependencies = (
+			);
 			productName = SocialApp;
 			productReference = A9A6153A295D8DE2009788E4 /* SocialApp.app */;
 			productType = "com.apple.product-type.application";
@@ -275,6 +280,8 @@
 				Base,
 			);
 			mainGroup = A9A61531295D8DE1009788E4;
+			packageReferences = (
+			);
 			productRefGroup = A9A6153B295D8DE2009788E4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -289,6 +296,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9C4CE0A2977194A005CD7FC /* SubscriptionKey_S6324MBQLK.p8 in Resources */,
 				A9A61545295D8DE6009788E4 /* Preview Assets.xcassets in Resources */,
 				A9A61542295D8DE6009788E4 /* Assets.xcassets in Resources */,
 			);
