@@ -64,7 +64,22 @@ struct LoginView: View {
             Button(action: {
                 SendLoginData()
             }) {
-                Text("Login")
+                Text("Get notif")
+                    .frame(minWidth: 0, maxWidth: 100, minHeight: 0, maxHeight: 10)
+                    .font(.system(size: 18))
+                    .padding()
+                    .foregroundColor(.white)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 25)
+                            .stroke(Color.white, lineWidth: 2)
+                    )
+            }
+            .cornerRadius(25)
+            
+            Button(action: {
+                CustomApi()
+            }) {
+                Text("CustomApi")
                     .frame(minWidth: 0, maxWidth: 100, minHeight: 0, maxHeight: 10)
                     .font(.system(size: 18))
                     .padding()

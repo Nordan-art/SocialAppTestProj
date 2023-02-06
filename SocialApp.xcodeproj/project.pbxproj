@@ -25,6 +25,7 @@
 		A9C4CDF22970ADE8005CD7FC /* WebViewRenderScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C4CDF12970ADE8005CD7FC /* WebViewRenderScreen.swift */; };
 		A9C4CDF52970AE0A005CD7FC /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C4CDF42970AE0A005CD7FC /* WebView.swift */; };
 		A9C4CE0A2977194A005CD7FC /* SubscriptionKey_S6324MBQLK.p8 in Resources */ = {isa = PBXBuildFile; fileRef = A9C4CE092977194A005CD7FC /* SubscriptionKey_S6324MBQLK.p8 */; };
+		A9C4CE0D2977F354005CD7FC /* SwiftJWT in Frameworks */ = {isa = PBXBuildFile; productRef = A9C4CE0C2977F354005CD7FC /* SwiftJWT */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9C4CE0D2977F354005CD7FC /* SwiftJWT in Frameworks */,
 				A9C4CDE6296F2825005CD7FC /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,6 +253,7 @@
 			);
 			name = SocialApp;
 			packageProductDependencies = (
+				A9C4CE0C2977F354005CD7FC /* SwiftJWT */,
 			);
 			productName = SocialApp;
 			productReference = A9A6153A295D8DE2009788E4 /* SocialApp.app */;
@@ -281,6 +284,7 @@
 			);
 			mainGroup = A9A61531295D8DE1009788E4;
 			packageReferences = (
+				A9C4CE0B2977F354005CD7FC /* XCRemoteSwiftPackageReference "Swift-JWT" */,
 			);
 			productRefGroup = A9A6153B295D8DE2009788E4 /* Products */;
 			projectDirPath = "";
@@ -535,6 +539,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A9C4CE0B2977F354005CD7FC /* XCRemoteSwiftPackageReference "Swift-JWT" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Kitura/Swift-JWT.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A9C4CE0C2977F354005CD7FC /* SwiftJWT */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A9C4CE0B2977F354005CD7FC /* XCRemoteSwiftPackageReference "Swift-JWT" */;
+			productName = SwiftJWT;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A9A61532295D8DE1009788E4 /* Project object */;
 }
